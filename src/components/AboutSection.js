@@ -1,10 +1,20 @@
 // src/components/AboutSection.js
 import React from 'react';
-import webimg from '../assets/webimg.jpg'; // Use the same image for now
+import webimg from '../assets/brutalpack-header--img.png'; // Use the same image for now
 
 const AboutSection = () => {
   return (
     <div className="p-12 bg-[#f9f9f9]">
+      {/* Header Image Section */}
+      <div className="w-full h-64 overflow-hidden mb-12">
+        <img 
+          src={webimg} 
+          alt="Brutal Pack Header" 
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      {/* Main Content Section */}
       <div className="max-w-6xl mx-auto space-y-12">
         {/* Section 1 */}
         <div className="flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-8">

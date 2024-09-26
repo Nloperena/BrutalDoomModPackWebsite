@@ -3,11 +3,21 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload, faGamepad, faCog, faKey, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { faDiscord } from '@fortawesome/free-brands-svg-icons';
+import headerImg from '../assets/brutalpack-header--img.png'; // Update with the correct path if needed
 
 const InstructionSection = () => {
   return (
     <div className="p-12 bg-gradient-to-t from-[#4D0D0A] via-[#79301A] to-[#AD5017] text-white">
       <div className="max-w-6xl mx-auto space-y-12">
+        {/* Header Image */}
+        <div className="w-full flex justify-center mb-8">
+          <img 
+            src={headerImg} 
+            alt="Brutal Pack Header" 
+            className="rounded-lg shadow-lg w-full md:max-w-4xl object-cover h-80 md:h-96"
+          />
+        </div>
+
         {/* Header Section */}
         <div className="text-center">
           <h2 className="text-4xl font-bold mb-6">Welcome to Brutal Pack!</h2>
@@ -17,19 +27,20 @@ const InstructionSection = () => {
         </div>
 
         {/* Instruction Cards with Arrows */}
-        <div className="flex flex-col md:flex-row md:justify-center md:items-center md:space-x-6 md:space-y-0 space-y-12"> {/* Single row layout on larger screens */}
+        <div className="flex flex-col md:flex-row md:justify-center md:items-start md:space-x-6 md:space-y-0 space-y-12">
           {/* Step 1 */}
-          <div className="bg-[#ffffff50] p-6 rounded-lg shadow-md text-center w-full md:max-w-xs flex flex-col justify-between h-[380px]"> {/* Fixed card height */}
-            <div>
-              <FontAwesomeIcon icon={faDownload} className="text-5xl text-[#79301A] mb-4" />
-              <h3 className="text-2xl font-bold mb-2">Step 1: Download GZDoom</h3>
+          <div className="bg-[#ffffff50] p-6 rounded-lg shadow-md text-center w-full md:max-w-xs flex flex-col justify-between items-center h-auto md:min-h-[540px] overflow-hidden">
+            <div className="text-xl font-bold text-[#2C4E44] mb-2">Step 1</div> {/* Step Text */}
+            <FontAwesomeIcon icon={faDownload} className="text-5xl text-[#79301A] mb-4" /> {/* Icon */}
+            <div className="flex-grow">
+              <h3 className="text-2xl font-bold mb-2">Download GZDoom</h3>
               <p className="text-lg mb-4">
                 Grab the latest version of GZDoom, the source port you’ll need to run Brutal Pack. Make sure you have version 4.12.2 or newer.
               </p>
             </div>
             <a
               href="https://zdoom.org/downloads"
-              className="inline-block bg-[#2C4E44] text-white py-2 px-4 rounded-lg hover:bg-[#19332D] transition duration-300"
+              className="inline-block bg-[#2C4E44] text-white py-2 px-4 rounded-lg hover:bg-[#19332D] transition duration-300 mt-4"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -38,20 +49,21 @@ const InstructionSection = () => {
           </div>
 
           {/* Arrow Icon */}
-          <FontAwesomeIcon icon={faArrowRight} className="text-4xl text-white my-6 hidden md:block" /> {/* White arrow with more gap, hidden on small screens */}
+          <FontAwesomeIcon icon={faArrowRight} className="text-4xl text-white my-6 hidden md:block" />
 
           {/* Step 2 */}
-          <div className="bg-[#ffffff50] p-6 rounded-lg shadow-md text-center w-full md:max-w-xs flex flex-col justify-between h-[380px]"> {/* Fixed card height */}
-            <div>
-              <FontAwesomeIcon icon={faGamepad} className="text-5xl text-[#79301A] mb-4" />
-              <h3 className="text-2xl font-bold mb-2">Step 2: Download Brutal Pack</h3>
+          <div className="bg-[#ffffff50] p-6 rounded-lg shadow-md text-center w-full md:max-w-xs flex flex-col justify-between items-center h-auto md:min-h-[540px] overflow-hidden">
+            <div className="text-xl font-bold text-[#2C4E44] mb-2">Step 2</div> {/* Step Text */}
+            <FontAwesomeIcon icon={faGamepad} className="text-5xl text-[#79301A] mb-4" /> {/* Icon */}
+            <div className="flex-grow">
+              <h3 className="text-2xl font-bold mb-2">Download Brutal Pack</h3>
               <p className="text-lg mb-4">
                 Download the latest version of Brutal Pack. This is your core mod file to experience enhanced Doom gameplay!
               </p>
             </div>
             <a
               href="https://drive.google.com/file/d/1yMbLuG2UeafjsLiogxqAeF_mvigSNKD9/view?usp=sharing"
-              className="inline-block bg-[#79301A] text-white py-2 px-4 rounded-lg hover:bg-[#561E11] transition duration-300"
+              className="inline-block bg-[#79301A] text-white py-2 px-4 rounded-lg hover:bg-[#561E11] transition duration-300 mt-4"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -63,10 +75,11 @@ const InstructionSection = () => {
           <FontAwesomeIcon icon={faArrowRight} className="text-4xl text-white my-6 hidden md:block" />
 
           {/* Step 3 */}
-          <div className="bg-[#ffffff50] p-6 rounded-lg shadow-md text-center w-full md:max-w-xs flex flex-col justify-between h-[380px]"> {/* Fixed card height */}
-            <div>
-              <FontAwesomeIcon icon={faCog} className="text-5xl text-[#79301A] mb-4" />
-              <h3 className="text-2xl font-bold mb-2">Step 3: Configure Controls</h3>
+          <div className="bg-[#ffffff50] p-6 rounded-lg shadow-md text-center w-full md:max-w-xs flex flex-col justify-between items-center h-auto md:min-h-[540px] overflow-hidden">
+            <div className="text-xl font-bold text-[#2C4E44] mb-2">Step 3</div> {/* Step Text */}
+            <FontAwesomeIcon icon={faCog} className="text-5xl text-[#79301A] mb-4" /> {/* Icon */}
+            <div className="flex-grow">
+              <h3 className="text-2xl font-bold mb-2">Configure Controls</h3>
               <p className="text-lg mb-4">
                 Set up your controls in GZDoom. Map keys for dashing, quick melee, and shoulder cannons for the best experience.
               </p>
@@ -77,10 +90,11 @@ const InstructionSection = () => {
           <FontAwesomeIcon icon={faArrowRight} className="text-4xl text-white my-6 hidden md:block" />
 
           {/* Step 4 */}
-          <div className="bg-[#ffffff50] p-6 rounded-lg shadow-md text-center w-full md:max-w-xs flex flex-col justify-between h-[380px]"> {/* Fixed card height */}
-            <div>
-              <FontAwesomeIcon icon={faKey} className="text-5xl text-[#79301A] mb-4" />
-              <h3 className="text-2xl font-bold mb-2">Step 4: Launch and Play</h3>
+          <div className="bg-[#ffffff50] p-6 rounded-lg shadow-md text-center w-full md:max-w-xs flex flex-col justify-between items-center h-auto md:min-h-[540px] overflow-hidden">
+            <div className="text-xl font-bold text-[#2C4E44] mb-2">Step 4</div> {/* Step Text */}
+            <FontAwesomeIcon icon={faKey} className="text-5xl text-[#79301A] mb-4" /> {/* Icon */}
+            <div className="flex-grow">
+              <h3 className="text-2xl font-bold mb-2">Launch and Play</h3>
               <p className="text-lg mb-4">
                 Launch GZDoom, select Brutal Pack from the list of mods, and dive into the ultimate Doom experience!
               </p>
@@ -89,7 +103,7 @@ const InstructionSection = () => {
         </div>
 
         {/* Discord Invitation Section */}
-        <div className="bg-[#ffffff50] p-6 rounded-lg shadow-md text-center max-w-md mx-auto"> {/* Squared container */}
+        <div className="bg-[#ffffff50] p-6 rounded-lg shadow-md text-center max-w-md mx-auto">
           <h3 className="text-3xl font-bold mb-4">Need More Help? Join Our Discord!</h3>
           <p className="text-lg mb-4">
             Connect with other players, get support, and stay updated with the latest news. We’re here to help you enjoy the game to the fullest!
@@ -100,8 +114,8 @@ const InstructionSection = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <span className="text-xl font-bold">Join Discord</span> {/* Larger text */}
-            <FontAwesomeIcon icon={faDiscord} className="ml-2 text-2xl" /> {/* Larger icon */}
+            <span className="text-xl font-bold">Join Discord</span>
+            <FontAwesomeIcon icon={faDiscord} className="ml-2 text-2xl" />
           </a>
         </div>
       </div>
