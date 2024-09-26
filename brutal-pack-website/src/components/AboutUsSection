@@ -1,0 +1,42 @@
+import React from 'react';
+import modImage1 from '../assets/mod-image1.png'; // Placeholder images
+import modImage2 from '../assets/mod-image2.png';
+
+function AboutUsSection() {
+  return (
+    <section className="bg-[#2C4E44] p-8">
+      <div className="max-w-6xl mx-auto">
+        {/* First Section */}
+        <div className="flex flex-col lg:flex-row items-center gap-8 mb-12">
+          <div className="w-full lg:w-1/2 text-left">
+            <h2 className="text-4xl font-bold text-[#D4B693] mb-4">About Brutal Pack</h2>
+            <p className="text-lg text-[#D4B693] mb-4">
+              Brutal Pack is a collection of enhancements for Brutal Doom, pushing the game's intensity to new levels.
+            </p>
+            <p className="text-lg text-[#D4B693] mb-4">
+              Featuring new weapons, enemies, and mechanics, it’s designed for those who crave more adrenaline in their gameplay.
+            </p>
+          </div>
+          <div className="w-full lg:w-1/2">
+            <img src={modImage1} alt="Gameplay" className="rounded-lg shadow-lg object-cover w-full h-96" />
+          </div>
+        </div>
+
+        {/* Second Section */}
+        <div className="flex flex-col lg:flex-row-reverse items-center gap-8">
+          <div className="w-full lg:w-1/2 text-left">
+            <h2 className="text-4xl font-bold text-[#D4B693] mb-4">Our Mission</h2>
+            <p className="text-lg text-[#D4B693] mb-4">
+              We aim to create the most intense and thrilling experience for Brutal Doom players, pushing the limits of what's possible.
+            </p>
+          </div>
+          <div className="w-full lg:w-1/2">
+            <img src={modImage2} alt="Enemies" className="rounded-lg shadow-lg object-cover w-full h-96" />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default AboutUsSection;
