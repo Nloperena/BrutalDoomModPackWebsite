@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+    font-family: 'CustomFont'; /* Name of your custom font */
+    src: url('../assets/fonts/custom-font.woff2') format('woff2'),
+         url('../assets/fonts/custom-font.woff') format('woff');
+    font-weight: normal; /* You can also define bold or other weights */
+    font-style: normal;  /* You can use italic, oblique, etc. */
+  }

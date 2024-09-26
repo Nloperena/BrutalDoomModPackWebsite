@@ -2,13 +2,13 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
-import AboutUsSection from './components/AboutUsSection';
 import ContactUsSection from './components/ContactUsSection';
 import Footer from './components/Footer';
-import DonateSection from './components/DonateSection'; // Import the DonateSection component
+import DonateSection from './components/DonateSection'; 
 import AboutSection from './components/AboutSection';
 import InstructionSection from './components/InstructionSection';
 import FeaturesSection from './components/FeaturesSection';
+
 function App() {
   return (
     <Router>
