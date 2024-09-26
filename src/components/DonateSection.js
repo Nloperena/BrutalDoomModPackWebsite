@@ -28,14 +28,22 @@ const DonateSection = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto p-8">
+    <div 
+      className="w-full min-h-screen p-8" 
+      style={{ 
+        background: 'linear-gradient(to top, #79301A, #2C4E44)', 
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
       {/* Donation Section Container */}
       <div 
-        className="flex flex-col lg:flex-row items-center lg:items-start bg-cover bg-center rounded-lg shadow-lg overflow-hidden relative" 
+        className="flex flex-col lg:flex-row items-center lg:items-start bg-cover bg-center rounded-lg shadow-lg overflow-hidden relative w-full max-w-6xl mx-auto" 
         style={{
           backgroundImage: `url(${backgroundImage})`,
           backgroundSize: 'cover',
-          backgroundPosition: 'center center', // Adjust to focus on coffee
+          backgroundPosition: 'center center', 
           backgroundRepeat: 'no-repeat',
         }}
       >
