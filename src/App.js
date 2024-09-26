@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import DonateSection from './components/DonateSection'; // Import the DonateSection component
 import AboutSection from './components/AboutSection';
 import InstructionSection from './components/InstructionSection';
+import FeaturesSection from './components/FeaturesSection';
 function App() {
   return (
     <Router>
@@ -24,7 +25,7 @@ function App() {
               <>
                 <HeroSection />
                 <InstructionSection />
-                
+                <FeaturesSection />
                 <DonateSection /> {/* Added DonateSection to the home page */}
                 <ContactUsSection />
               </>
@@ -55,13 +56,7 @@ function App() {
           <Route
             path="/download"
             element={
-              <div className="p-8 text-center">
-                <h2 className="text-4xl font-bold mb-4 text-[#D4B693]">Download Brutal Pack</h2>
-                <p className="text-lg text-[#AD5017] mb-8">Get the latest version of Brutal Pack for Brutal Doom v21 and unleash chaos like never before!</p>
-                <button className="bg-[#2C4E44] hover:bg-[#19332D] text-white px-8 py-4 rounded-lg text-xl">
-                  Download Now
-                </button>
-              </div>
+              <InstructionSection />
             }
           />
 
@@ -69,13 +64,7 @@ function App() {
           <Route
             path="/support"
             element={
-              <div className="p-8 text-center">
-                <h2 className="text-4xl font-bold mb-4 text-[#D4B693]">Support Development</h2>
-                <p className="text-lg text-[#AD5017] mb-8">Your support helps us continue developing and improving Brutal Pack. Consider donating to keep the updates coming!</p>
-                <button className="bg-[#79301A] hover:bg-[#561E11] text-white px-8 py-4 rounded-lg text-xl">
-                  Support Us on Patreon
-                </button>
-              </div>
+              <DonateSection />
             }
           />
 

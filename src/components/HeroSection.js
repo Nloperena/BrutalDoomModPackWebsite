@@ -1,4 +1,3 @@
-// src/components/HeroSection.js
 import React from 'react';
 
 const HeroSection = () => {
@@ -14,18 +13,21 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="relative w-full h-screen overflow-hidden"> {/* Full viewport height */}
-      {/* Vimeo Video Embed */}
-      <div className="absolute top-0 left-0 w-full h-full">
-        <div style={{ padding: '56.25% 0 0 0', position: 'relative' }}>
-          <iframe 
-            src="https://player.vimeo.com/video/1012996979?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&autoplay=1&muted=1&background=1"
-            frameBorder="0" 
-            allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
-            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} 
-            title="Project 6">
-          </iframe>
-        </div>
+    <div className="relative w-full overflow-hidden"> {/* Remove fixed height */}
+      {/* Aspect Ratio Container */}
+      <div className="relative w-full" style={{ paddingTop: '56.25%' }}> {/* 16:9 Aspect Ratio */}
+        {/* Vimeo Video Embed */}
+        <iframe 
+          src="https://player.vimeo.com/video/1012996979?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&autoplay=1&muted=1&background=1"
+          frameBorder="0" 
+          allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
+          className="absolute inset-0 w-full h-full" // Use absolute positioning
+          style={{ 
+            objectFit: 'cover', // Cover the entire container
+            zIndex: -1 // Ensure it stays behind other content
+          }} 
+          title="Project 6">
+        </iframe>
       </div>
 
       {/* Overlay Content */}
