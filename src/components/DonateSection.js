@@ -1,4 +1,3 @@
-// src/components/DonateSection.js
 import React from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements, useStripe, useElements, CardElement } from '@stripe/react-stripe-js';
@@ -43,8 +42,6 @@ const DonateForm = () => {
 
     const cardElement = elements.getElement(CardElement);
 
-    // Here, you would typically send the email, phone, and message to your backend.
-
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: 'card',
       card: cardElement,
@@ -58,13 +55,12 @@ const DonateForm = () => {
       setError(error.message);
     } else {
       setError(null);
-      alert('Donation successful!'); // You should replace this with actual backend integration.
-      // Send paymentMethod.id and other details to your backend for further processing.
+      alert('Donation successful!');
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col space-y-6 bg-[#f6f6f6] p-8 rounded-lg shadow-md w-full">
+    <form onSubmit={handleSubmit} className="flex flex-col space-y-6 bg-[#f3f4f6] p-8 rounded-lg shadow-md w-full">
       <div className="mb-6">
         <label htmlFor="email" className="block mb-2 text-[#4D0D0A]">Email</label>
         <input
@@ -120,17 +116,21 @@ const DonateForm = () => {
 const DonateSection = () => {
   return (
     <Elements stripe={stripePromise}>
-      <div className="flex flex-col md:flex-row items-center justify-between p-12 space-y-12 md:space-y-0 md:space-x-12 bg-[#f9f9f9] rounded-lg shadow-lg max-w-6xl mx-auto">
+      <div className="flex flex-col md:flex-row items-center justify-center p-12 space-y-12 md:space-y-0 md:space-x-12 bg-[#2E4A43] rounded-lg shadow-lg max-w-6xl mx-auto my-16"> {/* Adjusted margin */}
         {/* Left Column - Image */}
         <div className="flex-1 flex justify-center">
-          <img src={Devpic1} alt="Support Us" className="rounded-lg shadow-lg max-w-full h-96 object-cover" />
+          <img 
+            src={Devpic1} 
+            alt="Support Us" 
+            className="rounded-lg shadow-2xl border-4 border-[#D1B288] w-full h-auto max-w-[200%] md:max-w-[150%] lg:max-w-[120%] xl:max-w-[100%] object-cover" // Tripled horizontal size, heavier shadow, and border
+          />
         </div>
 
         {/* Middle Column - Headline and Paragraph */}
         <div className="flex-1 text-center md:text-left">
-          <h1 className="text-4xl font-bold text-[#79301A] mb-6">Help Us Keep the Lights On</h1>
-          <p className="text-lg text-[#4D0D0A] mb-6">
-            If you’re happy with the development, consider helping us keep our lights on. Your support allows us to continue iterating and improving this project!
+          <h1 className="text-5xl font-bold text-[#D1B288] mb-6">Help Us Keep the Lights On</h1> {/* Increased font size */}
+          <p className="text-lg text-[#D1B288] mb-6">
+            We’ve been battling the fires of hell and capitalism to bring you more enjoyable times. Help us quit our day jobs and continue slaying the demons of development. Donate today, and let’s bring you regular updates, new features, and even more epic gameplay!
           </p>
         </div>
 
