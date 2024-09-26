@@ -2,7 +2,7 @@
 import React from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements, useStripe, useElements, CardElement } from '@stripe/react-stripe-js';
-import webimg from '../assets/webimg.jpg'; // Make sure this path is correct
+import Devpic1 from '../assets/two--devs--fighting--hell.png'; // Make sure this path is correct
 
 // Load your Stripe public key
 const stripePromise = loadStripe('your-publishable-key-here'); // Replace with your Stripe publishable key
@@ -123,7 +123,7 @@ const DonateSection = () => {
       <div className="flex flex-col md:flex-row items-center justify-between p-12 space-y-12 md:space-y-0 md:space-x-12 bg-[#f9f9f9] rounded-lg shadow-lg max-w-6xl mx-auto">
         {/* Left Column - Image */}
         <div className="flex-1 flex justify-center">
-          <img src={webimg} alt="Support Us" className="rounded-lg shadow-lg max-w-full h-96 object-cover" />
+          <img src={Devpic1} alt="Support Us" className="rounded-lg shadow-lg max-w-full h-96 object-cover" />
         </div>
 
         {/* Middle Column - Headline and Paragraph */}
