@@ -25,7 +25,7 @@ function App() {
               <>
                 <HeroSection />
                 <InstructionSection />
-                <FeaturesSection />
+                {/* <FeaturesSection /> */}
                 <DonateSection /> {/* Added DonateSection to the home page */}
                 <ContactUsSection />
               </>
