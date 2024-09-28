@@ -8,6 +8,8 @@ import DonateSection from './components/DonateSection';
 import AboutSection from './components/AboutSection';
 import InstructionSection from './components/InstructionSection';
 import FeaturesSection from './components/FeaturesSection';
+import './assets/fonts.css';
+
 
 function App() {
   return (

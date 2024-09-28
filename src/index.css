@@ -3,30 +3,14 @@
 @tailwind utilities;
 
 
-@font-face {
-  font-family: 'SupermolotNeue';
-  src: url('/src/assets/fonts/TT Supermolot Neue Trial Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+body {
+  font-family: 'SupermolotRegular', sans-serif; /* Set a default font for the body */
 }
 
-@font-face {
-  font-family: 'SupermolotNeue';
-  src: url('/src/assets/fonts/TT Supermolot Neue Trial ExtraBold Italic.ttf') format('truetype');
-  font-weight: bold;
-  font-style: italic;
+h1, h2 {
+  font-family: 'SupermolotExtraBoldItalic', sans-serif; /* Apply a different font to headings */
 }
 
-@font-face {
-  font-family: 'SupermolotNeue';
-  src: url('/src/assets/fonts/TT Supermolot Neue Trial Italic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'SupermolotNeue';
-  src: url('/src/assets/fonts/TT Supermolot Neue Trial Light Italic.ttf') format('truetype');
-  font-weight: 300;
-  font-style: italic;
+p {
+  font-family: 'SupermolotLightItalic', sans-serif; /* Apply another font to paragraphs */
 }

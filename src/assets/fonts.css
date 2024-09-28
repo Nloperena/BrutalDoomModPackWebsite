@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'SupermolotExtraBoldItalic';
+  src: url('./fonts/TT Supermolot Neue Trial ExtraBold Italic.ttf') format('truetype'); /* Corrected path */
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'SupermolotItalic';
+  src: url('./fonts/TT Supermolot Neue Trial Italic.ttf') format('truetype'); /* Corrected path */
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'SupermolotLightItalic';
+  src: url('./fonts/TT Supermolot Neue Trial Light Italic.ttf') format('truetype'); /* Corrected path */
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'SupermolotRegular';
+  src: url('./fonts/TT Supermolot Neue Trial Regular.ttf') format('truetype'); /* Corrected path */
+  font-weight: normal;
+  font-style: normal;
+}
