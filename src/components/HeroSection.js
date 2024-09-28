@@ -1,30 +1,32 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 
 const HeroSection = () => {
-  // Function to handle the download
-  const handleDownload = () => {
-    // Use the URL of the zip file in the public folder
-    const link = document.createElement('a');
-    link.href = `${process.env.PUBLIC_URL}/assets/BRUTAL_PACK_V10_10.0b.zip`;
-    link.download = 'BRUTAL_PACK_V10_10.0b.zip';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link); // Clean up the DOM
+  const navigate = useNavigate(); // Initialize useNavigate
+
+  // Function to navigate to the download page
+  const handleDownloadPage = () => {
+    navigate('/download'); // Navigate to the download page
+  };
+
+  // Function to navigate to the contact page
+  const handleContactPage = () => {
+    navigate('/contact'); // Navigate to the contact page
   };
 
   return (
-    <div className="relative w-full overflow-hidden"> {/* Remove fixed height */}
+    <div className="relative w-full overflow-hidden">
       {/* Aspect Ratio Container */}
-      <div className="relative w-full" style={{ paddingTop: '56.25%' }}> {/* 16:9 Aspect Ratio */}
+      <div className="relative w-full" style={{ paddingTop: '56.25%' }}>
         {/* Vimeo Video Embed */}
         <iframe 
           src="https://player.vimeo.com/video/1012996979?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&autoplay=1&muted=1&background=1"
           frameBorder="0" 
           allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
-          className="absolute inset-0 w-full h-full" // Use absolute positioning
+          className="absolute inset-0 w-full h-full"
           style={{ 
-            objectFit: 'cover', // Cover the entire container
-            zIndex: -1 // Ensure it stays behind other content
+            objectFit: 'cover',
+            zIndex: -1
           }} 
           title="Project 6">
         </iframe>
@@ -37,12 +39,25 @@ const HeroSection = () => {
           Experience the ultimate DOOM mod with enhanced gameplay and stunning visuals. 
           Download now and join the chaos!
         </p>
-        <button 
-          onClick={handleDownload} // Trigger the download on click
-          className="bg-[#79301A] hover:bg-[#561E11] text-white py-3 px-8 rounded-lg text-lg transition duration-300"
-        >
-          Download Brutal Pack
-        </button>
+        
+        {/* Button Container */}
+        <div className="flex space-x-4"> {/* Flex container with spacing between buttons */}
+          {/* Download Button */}
+          <button 
+            onClick={handleDownloadPage} 
+            className="bg-[#79301A] hover:bg-[#561E11] text-white py-3 px-8 rounded-lg text-lg transition duration-300"
+          >
+            Download Brutal Pack
+          </button>
+          
+          {/* Contact Button */}
+          <button 
+            onClick={handleContactPage} 
+            className="border-2 border-[#D4B693] text-white py-3 px-8 rounded-lg text-lg transition duration-300 hover:bg-[#D4B693] hover:text-black bg-transparent"
+          >
+            Contact Us
+          </button>
+        </div>
       </div>
     </div>
   );
