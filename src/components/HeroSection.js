@@ -34,7 +34,7 @@ const HeroSection = () => {
 
       {/* Overlay Content */}
       <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center text-white p-6">
-        <h1 className="text-5xl font-bold mb-4">Dive into Hell. Slay More Demons</h1>
+        <h1 className="text-5xl font-bold mb-4">Slaying Demons Just Got Better</h1>
         <p className="text-xl mb-6">
           Experience the ultimate DOOM mod with enhanced gameplay and stunning visuals. 
           Download now and join the chaos!
