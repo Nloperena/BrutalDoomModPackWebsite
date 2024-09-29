@@ -8,6 +8,7 @@ import DonateSection from './components/DonateSection';
 import AboutSection from './components/AboutSection';
 import InstructionSection from './components/InstructionSection';
 import FeaturesSection from './components/FeaturesSection';
+import CreditsPlaque from './components/CreditsPlaque';
 import './assets/fonts.css';
 
 
@@ -36,10 +37,10 @@ function App() {
 
           {/* About Page Route */}
           <Route
-            path="/about"
+            path="/credits"
             element={
               <>
-                <AboutSection />
+              <CreditsPlaque />
               </>
             }
           />
@@ -66,7 +67,10 @@ function App() {
           <Route
             path="/support"
             element={
-              <DonateSection />
+              <>
+                   <DonateSection />
+              <ContactUsSection />
+              </>
             }
           />
 
