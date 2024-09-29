@@ -1,0 +1,36 @@
+/* Features.css */
+
+/* Breathing glow effect for the entire section */
+.glow-animation {
+    animation: glow 3s ease-in-out infinite;
+  }
+  
+  @keyframes glow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(173, 80, 23, 0.5);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(173, 80, 23, 1);
+    }
+  }
+  
+  /* Expanded GIF style */
+  .expanded-gif {
+    width: 190vw; /* Full width of the viewport */
+    height: auto; /* Maintain aspect ratio */
+    position: fixed; /* Fixed positioning */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the GIF */
+    z-index: 50; /* Above everything else */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Add a shadow for focus */
+    border-radius: 1rem; /* Rounded corners */
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+  }
+  
+  /* Disable hover effects for expanded GIF */
+  .feature-card img.expanded-gif:hover {
+    box-shadow: none; /* No additional hover shadow */
+    transform: none; /* No scaling on hover */
+  }
+  
