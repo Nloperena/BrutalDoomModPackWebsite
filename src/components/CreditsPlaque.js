@@ -6,6 +6,10 @@ function CreditsPlaque() {
 
   const credits = [
     {
+        name: 'Sgt_Mark_IV',
+        description: `Huge thank you to him and his creation of Brutal Doom, it is the foundation of this mod, this mod would not be made possible or exist without it.`,
+      },
+    {
       name: 'Awez',
       description: `The creation of the insanely detailed and unique blood and gore animations and sprites. Completely made from scratch and adds so much to the gameplay! Also, unique deaths for the Mancubus and Archville, these are some of the nicest animations I have ever seen, huge thank you to him!`,
     },
@@ -92,11 +96,7 @@ function CreditsPlaque() {
     {
       name: 'Quaker540',
       description: `Huge thank you to him! Although I haven't heard from him in a long time, this mod was completely based off and developed from his submod of Brutal Doom, huge inspiration and helped me a lot in getting familiar with modding Doom.`,
-    },
-    {
-      name: 'Sgt_Mark_IV',
-      description: `Huge thank you to him and his creation of Brutal Doom, it is the foundation of this mod, this mod would not be made possible or exist without it.`,
-    },
+    }
   ];
   
 
