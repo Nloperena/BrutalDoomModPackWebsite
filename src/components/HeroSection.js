@@ -1,51 +1,75 @@
 // src/components/HeroSection.js
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const HeroSection = () => {
   const navigate = useNavigate();
+
+  // State to track if the video has loaded
+  const [videoLoaded, setVideoLoaded] = useState(false);
 
   // Function to navigate to the download page
   const handleDownloadPage = () => {
     navigate('/download');
   };
 
-  // Function to navigate to the contact page
-  const handleContactPage = () => {
-    navigate('/contact');
+  // Function to navigate to the credits page
+  const handleCreditsPage = () => {
+    navigate('/credits'); // Ensure this route exists in your router
   };
 
   return (
-    <div className="relative w-screen h-screen overflow-hidden">
+    <div className="relative w-screen h-screen overflow-hidden crt-effect">
       {/* Video Background */}
       <div className="absolute inset-0 w-full h-full overflow-hidden">
-        {/* Vimeo Video Embed */}
-        <div className="absolute inset-0 w-full h-full">
+        {/* Wrapper for Blur Effect */}
+        <div
+          className="absolute inset-0 w-full h-full transition-filter duration-8000 ease"
+          style={{
+            filter: videoLoaded ? 'blur(0px)' : 'blur(20px)',
+          }}
+        >
+          {/* Vimeo Video Embed */}
           <iframe
-            src="https://player.vimeo.com/video/1012996979?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&autoplay=1&muted=1&background=1"
+            src="https://player.vimeo.com/video/1012996979?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&background=1"
             frameBorder="0"
             allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
             className="absolute top-1/2 left-1/2"
             style={{
-              width: '177.78vh', // 100vh * (16/9)
+              width: '177.78vh', // 100vh * (16/9) to maintain aspect ratio
               height: '100vh',
               transform: 'translate(-50%, -50%)',
               zIndex: -1,
             }}
             title="Project 6"
+            onLoad={() => setVideoLoaded(true)} // Set videoLoaded to true when iframe loads
           ></iframe>
         </div>
       </div>
 
+      {/* Animated Gradient Overlay */}
+      {!videoLoaded && (
+        <div className="absolute inset-0">
+          <div className="w-full h-full bg-gradient-animation"></div>
+        </div>
+      )}
+
       {/* Black Overlay to darken background */}
       <div className="absolute inset-0 bg-black bg-opacity-70"></div>
 
+      {/* Scan Lines Overlay */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="scan-lines"></div>
+      </div>
+
       {/* Overlay Content */}
-      <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white p-6">
-        <h1 className="text-6xl md:text-8xl font-extrabold mb-6">
+      <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white p-6 z-10">
+        {/* Headline */}
+        <h1 className="text-6xl md:text-8xl font-extrabold mb-6 crt-text">
           Slaying Demons Just Got Better
         </h1>
-        <p className="text-2xl md:text-3xl mb-8 max-w-3xl">
+        {/* Description */}
+        <p className="text-2xl md:text-3xl mb-8 max-w-3xl crt-text">
           Experience the ultimate DOOM mod with enhanced gameplay and stunning
           visuals. Download now and join the chaos!
         </p>
@@ -55,22 +79,122 @@ const HeroSection = () => {
           {/* Download Button with special hover effects */}
           <button
             onClick={handleDownloadPage}
-            className="bg-gradient-to-r from-[#79301A] to-[#561E11] hover:from-[#D64D1A] hover:to-[#FF2E00] text-white py-4 px-10 rounded-xl text-2xl transition duration-300 transform hover:scale-110 hover:shadow-glow"
+            className="bg-gradient-to-r from-[#79301A] to-[#561E11] hover:from-[#D64D1A] hover:to-[#FF2E00] text-white py-4 px-10 rounded-xl text-2xl transition duration-300 transform hover:scale-110 hover:shadow-glow crt-button"
             style={{ boxShadow: '0 0 20px rgba(255, 46, 0, 0.7)' }}
           >
             Download Brutal Pack
           </button>
 
-          {/* Contact Button with special hover effects */}
+          {/* Credits Button with special hover effects */}
           <button
-            onClick={handleContactPage}
-            className="border-4 border-[#D4B693] text-white py-4 px-10 rounded-xl text-2xl transition duration-300 hover:bg-[#D4B693] hover:text-black bg-transparent hover:border-transparent transform hover:scale-110 hover:shadow-glow"
+            onClick={handleCreditsPage}
+            className="border-4 border-[#D4B693] text-white py-4 px-10 rounded-xl text-2xl transition duration-300 hover:bg-[#D4B693] hover:text-black bg-transparent hover:border-transparent transform hover:scale-110 hover:shadow-glow crt-button"
             style={{ boxShadow: '0 0 20px rgba(255, 46, 0, 0.7)' }}
           >
-            Contact Us
+            Credits
           </button>
         </div>
       </div>
+
+      {/* CSS for Gradient Animation, Scan Lines, Flicker, and CRT Effects */}
+      <style jsx>{`
+        /* Animated Gradient Overlay */
+        .bg-gradient-animation {
+          background: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.7),
+            rgba(192, 192, 192, 0.7)
+          );
+          background-size: 100% 200%;
+          animation: gradientMove 3s linear infinite;
+        }
+
+        @keyframes gradientMove {
+          0% {
+            background-position: 0% 0%;
+          }
+          50% {
+            background-position: 0% 100%;
+          }
+          100% {
+            background-position: 0% 0%;
+          }
+        }
+
+        /* Shadow Glow for Buttons */
+        .shadow-glow {
+          box-shadow: 0 0 20px rgba(255, 46, 0, 0.7);
+        }
+
+        /* Transition for Filter */
+        .transition-filter {
+          transition: filter 8000ms ease;
+        }
+
+        /* Scan Lines Overlay */
+        .scan-lines {
+          width: 100%;
+          height: 100%;
+          background: repeating-linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.1) 0px,
+            rgba(255, 255, 255, 0.1) 2px,
+            rgba(0, 0, 0, 0.1) 2px,
+            rgba(0, 0, 0, 0.1) 4px
+          );
+          animation: flicker 3s infinite;
+        }
+
+        /* Flicker Animation */
+        @keyframes flicker {
+          0% {
+            opacity: 1;
+          }
+          5% {
+            opacity: 0.95;
+          }
+          10% {
+            opacity: 1;
+          }
+          15% {
+            opacity: 0.9;
+          }
+          20% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+
+        /* CRT Text Effect */
+        .crt-text {
+          text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        }
+
+        /* CRT Button Effect */
+        .crt-button {
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(2px);
+        }
+
+        /* Optional: Curved Screen Edges */
+        /* Uncomment the following if you want to add slight curvature */
+
+        /*
+        .crt-effect::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 10%;
+          box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
+          pointer-events: none;
+        }
+        */
+      `}</style>
     </div>
   );
 };
