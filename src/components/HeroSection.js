@@ -79,8 +79,9 @@ const HeroSection = () => {
           {/* Download Button with special hover effects */}
           <button
             onClick={handleDownloadPage}
-            className="bg-gradient-to-r from-[#79301A] to-[#561E11] hover:from-[#D64D1A] hover:to-[#FF2E00] text-white py-4 px-10 rounded-xl text-2xl transition duration-300 transform hover:scale-110 hover:shadow-glow crt-button"
+            className="bg-gradient-to-r from-[#79301A] to-[#561E11] hover:from-[#D64D1A] hover:to-[#FF2E00] text-white py-4 px-10 rounded-xl text-2xl transition duration-300 transform hover:scale-110 hover:shadow-glow crt-button focus:outline-none focus:ring-2 focus:ring-[#D4B693]"
             style={{ boxShadow: '0 0 20px rgba(255, 46, 0, 0.7)' }}
+            aria-label="Download Brutal Pack"
           >
             Download Brutal Pack
           </button>
@@ -88,8 +89,9 @@ const HeroSection = () => {
           {/* Credits Button with special hover effects */}
           <button
             onClick={handleCreditsPage}
-            className="border-4 border-[#D4B693] text-white py-4 px-10 rounded-xl text-2xl transition duration-300 hover:bg-[#D4B693] hover:text-black bg-transparent hover:border-transparent transform hover:scale-110 hover:shadow-glow crt-button"
+            className="border-4 border-[#D4B693] text-white py-4 px-10 rounded-xl text-2xl transition duration-300 hover:bg-[#D4B693] hover:text-black bg-transparent hover:border-transparent transform hover:scale-110 hover:shadow-glow crt-button focus:outline-none focus:ring-2 focus:ring-[#D4B693]"
             style={{ boxShadow: '0 0 20px rgba(255, 46, 0, 0.7)' }}
+            aria-label="View Credits"
           >
             Credits
           </button>
@@ -137,12 +139,23 @@ const HeroSection = () => {
           height: 100%;
           background: repeating-linear-gradient(
             to bottom,
-            rgba(255, 255, 255, 0.1) 0px,
-            rgba(255, 255, 255, 0.1) 2px,
-            rgba(0, 0, 0, 0.1) 2px,
-            rgba(0, 0, 0, 0.1) 4px
+            rgba(255, 255, 255, 0.3) 0px,      /* Increased opacity from 0.1 to 0.3 */
+            rgba(255, 255, 255, 0.3) 3px,      /* Adjusted spacing for smoother lines */
+            rgba(0, 0, 0, 0.3) 3px,
+            rgba(0, 0, 0, 0.3) 6px
           );
-          animation: flicker 3s infinite;
+          background-size: 100% 200%;
+          animation: scanLineMove 10s linear infinite, flicker 3s infinite;
+        }
+
+        /* Scan Lines Movement Animation */
+        @keyframes scanLineMove {
+          from {
+            background-position: 0% 0%;
+          }
+          to {
+            background-position: 0% 100%;
+          }
         }
 
         /* Flicker Animation */
