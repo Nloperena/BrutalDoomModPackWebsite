@@ -1,4 +1,3 @@
-// src/components/InstructionSection.js
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -12,7 +11,7 @@ import { faDiscord } from '@fortawesome/free-brands-svg-icons';
 import headerImg from '../assets/brutalpack-header--img.png'; // Update with the correct path if needed
 import { motion } from 'framer-motion'; // Import framer-motion for animations
 
-const InstructionSection = () => {
+const InstructionSection = ({ isContactPage }) => {
   // Animation variants for the cards
   const cardVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -40,7 +39,9 @@ const InstructionSection = () => {
 
   return (
     <motion.div
-      className="p-12 bg-gradient-to-b from-[#1e1e1e] via-[#2c2c2c] to-[#121212] text-white"
+      className={`${
+        isContactPage ? 'min-h-screen' : 'min-h-[80vh]'
+      } w-full bg-gradient-to-b from-[#1e1e1e] via-[#2c2c2c] to-[#121212] p-12 text-white flex items-center justify-center`}
       variants={containerVariants}
       initial="initial"
       animate="animate"

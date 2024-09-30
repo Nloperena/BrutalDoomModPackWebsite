@@ -1,15 +1,14 @@
-// src/components/ContactUsSection.js
 import React, { useState, useEffect, useRef } from 'react';
 import emailjs from 'emailjs-com';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faPatreon } from '@fortawesome/free-brands-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { motion, useAnimation, useInView } from 'framer-motion';
 
 // Initialize EmailJS with your Public Key
 emailjs.init('VKgbSXE2tVETQDLpv');
 
-function ContactUsSection() {
+function ContactUsSection({ isContactPage }) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -117,7 +116,12 @@ function ContactUsSection() {
   };
 
   return (
-    <section ref={sectionRef} className="relative">
+    <section
+      ref={sectionRef}
+      className={`relative flex items-center justify-center ${
+        isContactPage ? 'min-h-screen' : 'min-h-[80vh]'
+      } w-full`}
+    >
       {/* Background */}
       <motion.div
         className="absolute inset-0 bg-gradient-to-b from-[#1e1e1e] via-[#2c2c2c] to-[#121212]"
@@ -144,8 +148,7 @@ function ContactUsSection() {
             className="text-xl text-[#D4B693] max-w-2xl mx-auto"
             variants={childVariants}
           >
-            Have questions or feedback? We'd love to hear from you. Reach out to us
-            below.
+            Have questions or feedback? We'd love to hear from you. Reach out to us below.
           </motion.p>
 
           <motion.form
@@ -225,20 +228,12 @@ function ContactUsSection() {
             variants={childVariants}
           >
             <motion.a
-              href="https://github.com"
+              href="https://github.com/JTC03/BRUTAL-PACK-V10"
               className="text-[#D4B693] text-3xl"
               whileHover="hover"
               variants={iconVariants}
             >
               <FontAwesomeIcon icon={faGithub} />
-            </motion.a>
-            <motion.a
-              href="https://patreon.com"
-              className="text-[#D4B693] text-3xl"
-              whileHover="hover"
-              variants={iconVariants}
-            >
-              <FontAwesomeIcon icon={faPatreon} />
             </motion.a>
             <motion.a
               href="mailto:support@brutalpack.com"
