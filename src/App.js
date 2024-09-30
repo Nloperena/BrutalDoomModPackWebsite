@@ -29,7 +29,7 @@ function App() {
                 <HeroSection />
                 <InstructionSection />
                 <FeaturesSection />
-                <DonateSection /> {/* Added DonateSection to the home page */}
+                {/* <DonateSection /> Added DonateSection to the home page */}
                 <ContactUsSection />
               </>
             }
@@ -68,7 +68,7 @@ function App() {
             path="/support"
             element={
               <>
-                   <DonateSection />
+                   {/* <DonateSection /> */}
               <ContactUsSection />
               </>
             }

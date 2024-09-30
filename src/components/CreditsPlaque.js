@@ -10,6 +10,10 @@ function CreditsPlaque() {
         description: `Huge thank you to him and his creation of Brutal Doom, it is the foundation of this mod, this mod would not be made possible or exist without it.`,
       },
     {
+        name: 'Plimbro (N.L.)',
+        description: `Creator, designer and developer of DoomBrutalPack.com`
+      },
+    {
       name: 'Awez',
       description: `The creation of the insanely detailed and unique blood and gore animations and sprites. Completely made from scratch and adds so much to the gameplay! Also, unique deaths for the Mancubus and Archville, these are some of the nicest animations I have ever seen, huge thank you to him!`,
     },
