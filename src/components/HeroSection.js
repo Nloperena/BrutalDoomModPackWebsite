@@ -74,12 +74,11 @@ const HeroSection = () => {
       <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white p-6 z-10">
         {/* Headline */}
         <h1 className="text-6xl md:text-8xl font-extrabold mb-6 crt-text">
-          Slaying Demons Just Got Better
+          Brutality Awaits
         </h1>
         {/* Description */}
         <p className="text-2xl md:text-3xl mb-8 max-w-3xl crt-text">
-          Experience the ultimate DOOM mod with enhanced gameplay and stunning
-          visuals. Download now and join the chaos!
+        The gates of hell have opened, it's your turn to slam them shut. Gear up and dive headfirst into the inferno. The fight is merciless, but so are you.
         </p>
 
         {/* Button Container */}
