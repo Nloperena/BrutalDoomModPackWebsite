@@ -58,7 +58,7 @@ function CreditsPlaque() {
       description: `Huge thank you to him for his optimizations and edits of sprites, as well as his personal contributions/recommendations to the mod!`,
     },
     {
-      name: 'Kamil (Name)',
+      name: 'Kamil',
       description: `Huge thank you for their contributions towards optimizing sprites and organizing this mod, as well as ideas!`,
     },
     {
