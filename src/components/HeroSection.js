@@ -24,9 +24,10 @@ const HeroSection = () => {
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         {/* Wrapper for Blur Effect */}
         <div
-          className="absolute inset-0 w-full h-full transition-filter duration-8000 ease"
+          className="absolute inset-0 w-full h-full transition-filter ease"
           style={{
             filter: videoLoaded ? 'blur(0px)' : 'blur(20px)',
+            transition: 'filter 8s ease',
           }}
         >
           {/* Vimeo Video Embed */}
@@ -57,8 +58,15 @@ const HeroSection = () => {
       {/* Black Overlay to darken background */}
       <div className="absolute inset-0 bg-black bg-opacity-70"></div>
 
-      {/* Scan Lines Overlay */}
-      <div className="absolute inset-0 pointer-events-none">
+      {/* Scan Lines Overlay with Fade-Out Effect */}
+      <div
+        className={`absolute inset-0 pointer-events-none transition-opacity ease ${
+          videoLoaded ? 'opacity-0' : 'opacity-100'
+        }`}
+        style={{
+          transition: 'opacity 10s ease',
+        }}
+      >
         <div className="scan-lines"></div>
       </div>
 
@@ -130,7 +138,7 @@ const HeroSection = () => {
 
         /* Transition for Filter */
         .transition-filter {
-          transition: filter 8000ms ease;
+          transition: filter 8s ease;
         }
 
         /* Scan Lines Overlay */
@@ -139,8 +147,8 @@ const HeroSection = () => {
           height: 100%;
           background: repeating-linear-gradient(
             to bottom,
-            rgba(255, 255, 255, 0.3) 0px,      /* Increased opacity from 0.1 to 0.3 */
-            rgba(255, 255, 255, 0.3) 3px,      /* Adjusted spacing for smoother lines */
+            rgba(255, 255, 255, 0.3) 0px,      /* Increased opacity */
+            rgba(255, 255, 255, 0.3) 3px,      /* Adjusted spacing */
             rgba(0, 0, 0, 0.3) 3px,
             rgba(0, 0, 0, 0.3) 6px
           );
@@ -189,6 +197,8 @@ const HeroSection = () => {
         .crt-button {
           background: rgba(255, 255, 255, 0.1);
           backdrop-filter: blur(2px);
+          /* For Safari */
+          -webkit-backdrop-filter: blur(2px);
         }
 
         /* Optional: Curved Screen Edges */

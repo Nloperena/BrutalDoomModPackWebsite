@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGamepad, faBolt, faDragon } from '@fortawesome/free-solid-svg-icons';
 import FluidGameplayGif from '../assets/Featurefgif1.gif';
 import AnimatedGameplayGif from '../assets/Featurefgif2.gif';
+import EnemyGameplayGif from '../assets/Featurefgif3.gif';
 import './features.css'; // Ensure this CSS file is correctly imported
 
 function FeaturesSection() {
@@ -64,7 +65,7 @@ function FeaturesSection() {
               Unique Enemy Behavior
             </h3>
             <img
-              src={FluidGameplayGif}
+              src={EnemyGameplayGif}
               alt="Unique Enemy Behavior"
               className="mb-6 rounded-lg shadow-[0_0_15px_rgba(0,0,0,1)]"
             />
